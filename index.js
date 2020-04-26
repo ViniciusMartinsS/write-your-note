@@ -1,8 +1,6 @@
 'use strict'
 
 function createWorkspace() {
-  const REGEX = /(index.html)/i
-
   const workspace = document.getElementById("workspace")
     .value
 
@@ -11,7 +9,6 @@ function createWorkspace() {
     return
   }
 
-  const newRoute = `notes/index.html?workspace=${workspace}`
-  const redirect = document.URL.replace(REGEX, newRoute)
+  const redirect = `${document.URL}/notes/index.html?workspace=${workspace}`
   window.location.href = redirect;
 }
