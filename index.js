@@ -9,6 +9,6 @@ function createWorkspace() {
     return
   }
 
-  const redirect = `${document.URL}/notes/index.html?workspace=${workspace}`
+  const redirect = `${document.URL}notes/index.html?workspace=${workspace}`
   window.location.href = redirect;
 }
