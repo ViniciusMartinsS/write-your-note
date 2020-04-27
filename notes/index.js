@@ -1,5 +1,7 @@
 'use strict'
 
+const ROOT = 'https://writeyournote.herokuapp.com/'
+
 function saveUserData () {
   const workspace = defineWorkspace()
   const text = document.getElementById("textarea")
@@ -19,5 +21,13 @@ function retrieveUserData () {
 
 function defineWorkspace () {
   const REGEX = /\?workspace=(.+)/i
-  return document.URL.match(REGEX)[1] || null
+  const workspace = document.URL.match(REGEX)
+
+  if (!workspace) {
+    window.alert('Invalid Workspace!')
+    window.location.href = ROOT
+    return
+  }
+
+  return workspace[1]
 }
